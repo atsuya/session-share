@@ -2,9 +2,7 @@ module SessionShare
   class Handler
     def initialize(redis_namespace, options = {})
       @redis_namespace = redis_namespace
-      @config = {
-        :prefix => 'session_share_default'
-      }.merge(options)
+      @config = {}.merge(options)
     end
 
     def set(session_id, data)
