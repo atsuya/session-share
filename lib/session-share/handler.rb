@@ -18,5 +18,9 @@ module SessionShare
 
       value.blank? ? {} : json.merge(symbolized)
     end
+
+    def delete(session_id)
+      @redis_namespace.del(session_id)
+    end
   end
 end
